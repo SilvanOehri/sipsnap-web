@@ -1,53 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
-  <base href="$FLUTTER_BASE_HREF">
-
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
-
-  <!-- iOS meta tags & icons -->
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="sipsnap">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
-
-  <title>sipsnap</title>
-  <link rel="manifest" href="manifest.json">
-
-  <!-- Google Maps JavaScript API for Flutter Web - Key wird via --dart-define übergeben -->
-  <script>
-    // API Key wird beim Build via: flutter build web --dart-define=GOOGLE_API_KEY=xxx übergeben
-    const googleApiKey = String.fromEnvironment !== undefined 
-      ? '%GOOGLE_API_KEY%'  // Placeholder für Build-Zeit Ersetzung
-      : '';
-    
-    if (googleApiKey && googleApiKey !== '' && !googleApiKey.includes('%')) {
-      const script = document.createElement('script');
-      script.src = `https://maps.googleapis.com/maps/api/js?key=${googleApiKey}`;
-      script.async = true;
-      document.head.appendChild(script);
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SipSnap - Teile deine Drinks mit Freunden</title>
+    <meta property="og:title" content="SipSnap">
+    <meta property="og:description" content="Die beste App um deine Drinks mit Freunden zu teilen!">
+    <meta property="og:image" content="https://sipsnap.app/icons/Icon-512.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+            background: linear-gradient(135deg, #0F1115 0%, #1A1D24 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container { text-align: center; max-width: 500px; }
+        .logo { font-size: 80px; margin-bottom: 20px; }
+        h1 { font-size: 42px; margin-bottom: 10px; }
+        .tagline { font-size: 20px; color: #F5A623; margin-bottom: 20px; font-weight: 500; }
+        p { color: #9CA3AF; margin-bottom: 30px; line-height: 1.6; font-size: 16px; }
+        .stores { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .store-badge { height: 50px; border-radius: 8px; transition: transform 0.2s; }
+        .store-badge:hover { transform: scale(1.05); }
+        .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 50px; text-align: left; }
+        .feature { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); }
+        .feature-icon { font-size: 28px; margin-bottom: 10px; }
+        .feature h3 { font-size: 15px; margin-bottom: 6px; color: #F5A623; }
+        .feature p { font-size: 13px; margin: 0; color: #9CA3AF; }
+        @media (max-width: 500px) { .features { grid-template-columns: 1fr; } h1 { font-size: 32px; } }
+    </style>
 </head>
 <body>
-  <script src="flutter_bootstrap.js" async></script>
+    <div class="container">
+        <div class="logo">🍻</div>
+        <h1>SipSnap</h1>
+        <p class="tagline">Teile deine Drinks mit Freunden</p>
+        <p>Mache ein Foto von deinem Drink, teile den Moment mit Freunden und entdecke neue Locations!</p>
+        <div class="stores">
+            <a href="https://apps.apple.com/app/sipsnap/id123456789">
+                <img class="store-badge" src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/de-de" alt="App Store">
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=app.sipsnap.android">
+                <img class="store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/de_badge_web_generic.png" alt="Play Store" style="height:74px;margin-top:-12px;">
+            </a>
+        </div>
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">📸</div>
+                <h3>Sips teilen</h3>
+                <p>Mache ein Foto von deinem Drink</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📍</div>
+                <h3>Locations</h3>
+                <p>Finde die besten Bars</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">👥</div>
+                <h3>Freunde</h3>
+                <p>Sieh was deine Freunde trinken</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🗺️</div>
+                <h3>Drink Map</h3>
+                <p>Alle Sips auf einer Karte</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
