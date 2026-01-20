@@ -1,0 +1,22 @@
+{
+  "rewrites": [
+    { "source": "/invite/:code", "destination": "/invite.html" },
+    { "source": "/connect/:userId", "destination": "/connect.html" },
+    { "source": "/group/:groupId", "destination": "/group.html" },
+    { "source": "/sip/:sipId", "destination": "/sip.html" }
+  ],
+  "headers": [
+    {
+      "source": "/.well-known/apple-app-site-association",
+      "headers": [
+        { "key": "Content-Type", "value": "application/json" }
+      ]
+    },
+    {
+      "source": "/.well-known/assetlinks.json",
+      "headers": [
+        { "key": "Content-Type", "value": "application/json" }
+      ]
+    }
+  ]
+}

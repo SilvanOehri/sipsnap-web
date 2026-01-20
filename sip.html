@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SipSnap - Sip ansehen</title>
+    <meta property="og:title" content="Schau dir diesen Sip an! 🍺">
+    <meta property="og:description" content="Sieh dir diesen Drink auf SipSnap an!">
+    <meta property="og:image" content="https://sipsnap.app/og-image.png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0F1115 0%, #1A1D24 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container { text-align: center; max-width: 400px; }
+        .logo { font-size: 64px; margin-bottom: 20px; }
+        h1 { font-size: 28px; margin-bottom: 10px; }
+        p { color: #9CA3AF; margin-bottom: 30px; }
+        .button {
+            display: inline-block;
+            background: linear-gradient(135deg, #F5A623 0%, #F97316 100%);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🍺</div>
+        <h1>Sip ansehen</h1>
+        <p>Jemand teilt einen Drink mit dir!</p>
+        <a href="sipsnap://sip/{sipId}" class="button" id="openApp">In App öffnen</a>
+    </div>
+    <script>
+        const sipId = window.location.pathname.split('/sip/')[1];
+        if (sipId) {
+            document.getElementById('openApp').href = `sipsnap://sip/${sipId}`;
+            if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+                window.location.href = `sipsnap://sip/${sipId}`;
+            }
+        }
+    </script>
+</body>
+</html>

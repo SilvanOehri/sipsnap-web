@@ -1,0 +1,46 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": [
+          "D4P64V4527.app.sipsnap.ios"
+        ],
+        "paths": [
+          "/invite/*",
+          "/connect/*",
+          "/group/*",
+          "/sip/*",
+          "/u/*"
+        ],
+        "components": [
+          {
+            "/": "/invite/*",
+            "comment": "Invite links"
+          },
+          {
+            "/": "/connect/*",
+            "comment": "Connection/Friend invite links"
+          },
+          {
+            "/": "/group/*",
+            "comment": "Group invite links"
+          },
+          {
+            "/": "/sip/*",
+            "comment": "Sip detail links"
+          },
+          {
+            "/": "/u/*",
+            "comment": "User profile links"
+          }
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "D4P64V4527.app.sipsnap.ios"
+    ]
+  }
+}
